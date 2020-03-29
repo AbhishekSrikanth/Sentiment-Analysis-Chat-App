@@ -1,0 +1,12 @@
+body,html {
+    height: 100%;
+    width: 100%;
+}
+
+.msg-usr1 {
+    background: lightgrey;
+}
+
+.msg-usr2 {
+    background: lightsteelblue;
+}

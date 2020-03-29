@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/app.css">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <title>Sentiment Analysis</title>
+</head>
+
+<body>
+
+    <div class="container-fluid bg-primary w-100" id="sent-container">
+        <p class="text-center" id="sent-label">Sentiment</p>
+    </div>
+
+    <div class="container-fluid" id="chat-window">
+
+        <div class="container msg-usr1 my-2 p-3">
+            <img src="/w3images/bandmember.jpg" alt="Avatar">
+            <p>Message text here</p>
+            <span class="time-right">11:00</span>
+        </div>
+
+        <div class="container msg-usr2 my-2 p-3">
+            <img src="/w3images/bandmember.jpg" alt="Avatar">
+            <p>Message text here</p>
+            <span class="time-right">11:00</span>
+        </div>
+
+    </div>
+
+    <div class="container fixed-bottom p-3 w-100">
+        <form class="form-inline float-left w-50 p-2 justify-content-center" action="">
+            <input class="form-control mr-sm-2 flex-fill" type="text" placeholder="User1 Type Here">
+            <button class="btn btn-success btn-sm" type="submit">Send</button>
+        </form>
+        <form class="form-inline float-right w-50 p-2 justify-content-center" action="">
+            <input class="form-control mr-sm-2 flex-fill" type="text" placeholder="User2 Type Here">
+            <button class="btn btn-success btn-sm" type="submit">Send</button>
+        </form>
+    </div>
+
+</body>
+
+</html>
