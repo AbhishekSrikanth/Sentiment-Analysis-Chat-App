@@ -1,0 +1,24 @@
+{
+  "name": "sentiment-analysis-chat-app",
+  "version": "1.0.0",
+  "description": "initial",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AbhishekSrikanth/Sentiment-Analysis-Chat-App.git"
+  },
+  "author": "Abhishek Srikanth",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AbhishekSrikanth/Sentiment-Analysis-Chat-App/issues"
+  },
+  "homepage": "https://github.com/AbhishekSrikanth/Sentiment-Analysis-Chat-App#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "multer": "^1.4.2"
+  }
+}
