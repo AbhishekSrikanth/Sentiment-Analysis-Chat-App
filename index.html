@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="public/css/app.css">
+    <link rel="stylesheet" href="css/app.css">
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
@@ -19,39 +19,24 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
+    <script defer src="http://localhost:3000/socket.io/socket.io.js"></script>
+    <script defer src="script.js"></script>
+
     <title>Sentiment Analysis</title>
 </head>
 
 <body>
 
-    <div class="container-fluid bg-primary w-100" id="sent-container">
-        <p class="text-center" id="sent-label">Sentiment</p>
+    <div class="container-fluid" id="message-container">
+        <div>
+            
+        </div>
     </div>
 
-    <div class="container-fluid" id="chat-window">
-
-        <div class="container msg-usr1 my-2 p-3">
-            <img src="/w3images/bandmember.jpg" alt="Avatar">
-            <p>Message text here</p>
-            <span class="time-right">11:00</span>
-        </div>
-
-        <div class="container msg-usr2 my-2 p-3">
-            <img src="/w3images/bandmember.jpg" alt="Avatar">
-            <p>Message text here</p>
-            <span class="time-right">11:00</span>
-        </div>
-
-    </div>
-
-    <div class="container fixed-bottom p-3 w-100">
-        <form class="form-inline float-left w-50 p-2 justify-content-center" action="">
-            <input class="form-control mr-sm-2 flex-fill" type="text" placeholder="User1 Type Here">
-            <button class="btn btn-success btn-sm" type="submit">Send</button>
-        </form>
-        <form class="form-inline float-right w-50 p-2 justify-content-center" action="/" method="POST">
-            <input class="form-control mr-sm-2 flex-fill" type="text" name="usr2txt" placeholder="User2 Type Here">
-            <button class="btn btn-success btn-sm" type="submit">Send</button>
+    <div class="container-fluid fixed-bottom p-3 w-100">
+        <form class="form-inline mx-auto w-50 p-2" id="send-container">
+            <input class="form-control mr-sm-2 flex-fill" type="text" id="message-input" placeholder="Type Here">
+            <button class="btn btn-success btn-sm" id="send-button" type="submit">Send</button>
         </form>
     </div>
 
