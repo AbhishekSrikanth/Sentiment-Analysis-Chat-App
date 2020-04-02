@@ -10,7 +10,25 @@ io.on('connection', socket => {
     socket.broadcast.emit('user-connected', name);
   });
   socket.on('send-chat-message', message => {
-    socket.broadcast.emit('chat-message', { message: message, name: users[socket.id] });
+
+    var fromPy = "";
+    var spawn = require("child_process").spawn;
+    var process = spawn('python', ["./py-scripts/predict.py", message]);
+    process.stdout.on('data', function (data) {
+      console.log("Python answered");
+      console.log(data.toString());
+      fromPy = data.toString();
+      socket.broadcast.emit('chat-message', {
+        message: message,
+        name: users[socket.id],
+        sentiment: fromPy
+      });
+    });
+
+
+    process.stderr.on('data', (data) => {
+      console.error(`child stderr:\n${data}`);
+    });
   });
   socket.on('disconnect', () => {
     socket.broadcast.emit('user-disconnected', users[socket.id]);

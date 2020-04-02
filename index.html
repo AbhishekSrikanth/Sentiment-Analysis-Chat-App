@@ -27,16 +27,26 @@
 
 <body>
 
-    <div class="container-fluid" id="message-container">
-        <div>
-            
+    <div class="container w-50 mx-auto mb-5" id="message-container">
+        <!-- <div class="container text-right my-3 p-1">
+            <span class="bg-primary rounded py-2 px-3 text-light">
+                Text message
+            </span>
         </div>
+
+        <div class="container text-left my-3 p-1">
+            <span class="py-2 px-3 text-light rounded bg-secondary">Text Message</span>
+        </div>
+
+        <div class="container w-50 text-center my-5 py-1 chat-info mx-auto">
+            <span class="bg-light text-primary rounded py-3 px-3">You joined</span>
+        </div> -->
     </div>
 
     <div class="container-fluid fixed-bottom p-3 w-100">
         <form class="form-inline mx-auto w-50 p-2" id="send-container">
-            <input class="form-control mr-sm-2 flex-fill" type="text" id="message-input" placeholder="Type Here">
-            <button class="btn btn-success btn-sm" id="send-button" type="submit">Send</button>
+            <input class="form-control border-primary mr-sm-2 flex-fill" type="text" id="message-input" placeholder="Type Here">
+            <button class="btn btn-primary btn" id="send-button" type="submit">Send</button>
         </form>
     </div>
 

@@ -6,31 +6,63 @@ const messageForm = document.getElementById('send-container');
 const messageInput = document.getElementById('message-input');
 
 const name = prompt('What is your name?');
-appendMessage('You joined');
+appendInfo('You joined');
 socket.emit('new-user', name);
 
 socket.on('chat-message', data => {
-  appendMessage(`${data.name}: ${data.message}`);
+  appendMsgOther(`${data.name}: ${data.message}`,data.sentiment);
+  console.log(`${data.sentiment}`);
 });
 
 socket.on('user-connected', name => {
-  appendMessage(`${name} connected`);
+  appendInfo(`${name} connected`);
 });
 
 socket.on('user-disconnected', name => {
-  appendMessage(`${name} disconnected`);
+  appendInfo(`${name} disconnected`);
 });
 
 messageForm.addEventListener('submit', e => {
   e.preventDefault();
   const message = messageInput.value;
-  appendMessage(`You: ${message}`);
+  appendMsgSelf(`You: ${message}`);
   socket.emit('send-chat-message', message);
   messageInput.value = '';
 });
 
-function appendMessage(message) {
-  const messageElement = document.createElement('div');
-  messageElement.innerText = message;
-  messageContainer.append(messageElement);
+function appendMsgSelf(message) {
+  const messageDiv = document.createElement('div');
+  messageDiv.setAttribute("class","container text-right my-3 p-1"); 
+
+  const messageText = document.createElement('span');
+  messageText.setAttribute("class","bg-primary rounded py-2 px-3 text-light");
+  messageText.innerText = message;
+
+  messageDiv.append(messageText);
+  messageContainer.append(messageDiv);
+}
+
+function appendMsgOther(message,sentiment) {
+  const messageDiv = document.createElement('div');
+  console.log(sentiment);
+  messageDiv.setAttribute("class",`container text-left my-3 p-1`);
+
+  const messageText = document.createElement('span');
+  messageText.setAttribute("class",`py-2 px-3 text-light rounded bg-${sentiment}`);
+  messageText.innerText = message;
+
+  messageDiv.append(messageText);
+  messageContainer.append(messageDiv);
+}
+
+function appendInfo(message) {
+  const messageDiv = document.createElement('div');
+  messageDiv.setAttribute("class","container w-50 text-center my-4 py-1 chat-info mx-auto");
+
+  const messageText = document.createElement('span');
+  messageText.setAttribute("class","bg-light text-primary rounded py-3 px-3");
+  messageText.innerText = message;
+
+  messageDiv.append(messageText);
+  messageContainer.append(messageDiv);
 }

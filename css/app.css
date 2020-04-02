@@ -2,3 +2,15 @@ body,html {
     height: 100%;
     width: 100%;
 }
+
+/* .msg-self {
+    background-color: steelblue;
+}
+
+.msg-other {
+    background-color: lightcyan;
+} */
+
+span {
+    line-height: 37px !important; 
+}
